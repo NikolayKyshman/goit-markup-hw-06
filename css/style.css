@@ -4,6 +4,7 @@
   --title-color: #212121;
   --secondary-color: #757575;
   --first-background-color: #2f303a;
+  --transition-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -538,7 +539,8 @@ body {
   padding-bottom: 60px;
 }
 
-.join {
+.join,
+.footer-follow {
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -594,6 +596,12 @@ body {
   padding-top: 72px;
   padding-bottom: 100px;
   margin-left: 70px;
+}
+
+.footer-input {
+  padding-top: 72px;
+  padding-bottom: 94px;
+  margin-left: 93px;
 }
 
 /* ------------------------hero-----portfolio-----button------------------ */
@@ -789,6 +797,12 @@ body {
   position: absolute;
   top: 8px;
   right: 8px;
+  transition: fill 250ms var(--transition-cubic);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--logo-and-active-color);
 }
 
 .is-hidden {
@@ -850,6 +864,7 @@ body {
   align-items: center;
   text-align: center;
   margin: 0 auto;
+  border: none;
 }
 
 .modal-btn-text {
