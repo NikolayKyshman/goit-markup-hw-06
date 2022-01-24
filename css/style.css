@@ -20,6 +20,7 @@ body {
   text-decoration: none;
 }
 
+
 /* --------------------------HEADER----------------------------- */
 .container {
   width: 1200px;
@@ -839,8 +840,8 @@ body {
 }
 
 .modal {
-  width: 528px;
-  height: 581px;
+  min-width: 528px;
+  min-height: 581px;
   background-color: var(--first-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -851,7 +852,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 1000ms;
-  padding: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
 }
 
 .modal-close {
@@ -899,6 +903,18 @@ body {
   display: flex;
   align-items: center;
   padding-left: 42px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 250ms var(--transition-cubic),
+    fill 250ms var(--transition-cubic);
+}
+
+.form-input:focus {
+  border-color: var(--logo-and-active-color);
+}
+
+.form-input:focus + .modal-input-icon {
+  fill: var(--logo-and-active-color);
 }
 
 .input-text {
@@ -924,7 +940,7 @@ body {
   fill: #212121;
 }
 
-.modal-form {
+.modal-form + .modal-form {
   margin-bottom: 10px;
 }
 
@@ -935,6 +951,52 @@ body {
   border-radius: 4px;
   padding: 15px;
   resize: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.check-icon {
+  display: flex;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+  
+}
+
+.policy-check:checked + .check-contract {
+  color: var(--logo-and-active-color)
+  border-bottom: 2px solid var(--logo-and-active-color);
+}
+
+
+.policy-check {
+  visibility: hidden;
+}
+
+.check-icon::before {
+  content: "";
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.policy-check:checked + .check-icon::before {
+  border: none;
+  background-image: url(../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.check-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .input-button {
@@ -949,6 +1011,12 @@ body {
   text-align: center;
   margin: 0 auto;
   border: none;
+  transition: 250ms var(--transition-cubic);
+}
+
+.input-button:hover,
+.input-button:focus {
+  background-color: #188ce8;
 }
 
 .modal-btn-text {
