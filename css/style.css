@@ -605,8 +605,8 @@ body {
 .footer-input {
   padding-top: 72px;
   padding-bottom: 94px;
-  padding-left: 93px;
-  /* margin-left: 93px; */
+
+  margin-left: auto;
 }
 
 .footer-input-mail {
