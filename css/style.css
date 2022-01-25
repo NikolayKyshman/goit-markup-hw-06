@@ -20,7 +20,6 @@ body {
   text-decoration: none;
 }
 
-
 /* --------------------------HEADER----------------------------- */
 .container {
   width: 1200px;
@@ -940,7 +939,7 @@ body {
   fill: #212121;
 }
 
-.modal-form + .modal-form {
+.modal-form {
   margin-bottom: 10px;
 }
 
@@ -955,48 +954,72 @@ body {
   cursor: pointer;
 }
 
-.check-icon {
-  display: flex;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.check-box {
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
   color: var(--secondary-color);
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.policy-check:checked + .check-contract {
-  color: var(--logo-and-active-color)
-  border-bottom: 2px solid var(--logo-and-active-color);
+.checked-link {
+  color: var(--logo-and-active-color);
+  border-bottom: 1px solid;
+  cursor: pointer;
 }
 
-
-.policy-check {
-  visibility: hidden;
-}
-
-.check-icon::before {
-  content: "";
+.check-icon span {
   width: 16px;
   height: 15px;
   border: 2px solid #212121;
   border-radius: 2px;
   margin-right: 7px;
-}
-
-.policy-check:checked + .check-icon::before {
-  border: none;
-  background-image: url(../images/icon-check.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.check-box {
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 30px;
+}
+
+.check-icon-box {
+  fill: transparent;
+}
+
+.policy-check:checked + .check-icon span {
+  border: none;
+  background-color: var(--logo-and-active-color);
+}
+
+.policy-check:checked + .check-icon .check-icon-box {
+  fill: var(--first-color);
+}
+
+.input-button:hover,
+.input-button:focus {
+  background-color: #188ce8;
+}
+
+.modal-btn-text {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1, 87;
+  letter-spacing: 0.06em;
+  border: none;
+  color: var(--first-color);
 }
 
 .input-button {
@@ -1012,18 +1035,4 @@ body {
   margin: 0 auto;
   border: none;
   transition: 250ms var(--transition-cubic);
-}
-
-.input-button:hover,
-.input-button:focus {
-  background-color: #188ce8;
-}
-
-.modal-btn-text {
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1, 87;
-  letter-spacing: 0.06em;
-  border: none;
-  color: var(--first-color);
 }
